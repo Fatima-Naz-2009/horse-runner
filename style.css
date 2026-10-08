@@ -1,0 +1,214 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+    background: #0e0f12;
+    font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    color: #111;
+}
+
+#game {
+    position: relative;
+    width: 900px;
+    height: 360px;
+    border: 2px solid #222;
+    border-radius: 16px;
+    overflow: hidden;
+    background: linear-gradient(#7ec8ff, #cbefff 60%);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, .35);
+}
+
+.score {
+    position: absolute;
+    z-index: 20;
+    top: 10px;
+    left: 10px;
+    padding: 6px 10px;
+    border-radius: 10px;
+    font-weight: 700;
+    color: #fff;
+    background: rgba(0, 0, 0, .35);
+    backdrop-filter: blur(2px);
+    user-select: none;
+}
+
+
+/* Horse sprite */
+
+.horse {
+    position: absolute;
+    z-index: 10;
+
+    left: 100px;
+    bottom: 84px;
+
+    width: 120px;
+    height: 78px;
+
+    background-image: url("horse-sprites.png");
+    background-repeat: no-repeat;
+    background-size: 720px 78px;
+    background-position: 0 0;
+
+    image-rendering: pixelated;
+
+    pointer-events: none;
+}
+
+
+/* Ground */
+
+.ground {
+    position: absolute;
+    z-index: 5;
+
+    left: 0;
+    bottom: 0;
+
+    width: 100%;
+    height: 90px;
+
+    background: linear-gradient(#3aa65a, #2f8c49);
+
+    border-top: 3px solid rgba(0, 0, 0, .2);
+}
+
+
+/* Start Screen */
+
+.start-screen {
+    position: absolute;
+    z-index: 30;
+
+    inset: 0;
+
+    display: grid;
+    place-items: center;
+
+    background: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, .15),
+        rgba(0, 0, 0, .35)
+    );
+}
+
+.start-screen .card {
+    width: 70%;
+    max-width: 560px;
+
+    text-align: center;
+
+    background: #ffffffdd;
+
+    padding: 22px 20px;
+
+    border-radius: 16px;
+
+    box-shadow: 0 12px 24px rgba(0, 0, 0, .25);
+}
+
+.start-screen h1 {
+    margin: 0 0 80px;
+}
+
+.start-screen p {
+    margin: 6px 0;
+}
+
+button {
+    cursor: pointer;
+}
+
+button#startBtn:hover {
+    filter: brightness(1.1);
+}
+
+
+/* Obstacles */
+
+.obstacle {
+    position: absolute;
+    z-index: 8;
+
+    bottom: 90px;
+
+    width: 40px;
+    height: 50px;
+
+    background: #8B4513;
+
+    border: 2px solid #5C3317;
+
+    border-radius: 4px;
+
+    box-shadow: inset 0 -4px rgba(0, 0, 0, 0.3);
+}
+
+
+/* Game Over Screen */
+
+.game-over-screen {
+    position: absolute;
+    z-index: 30;
+
+    inset: 0;
+
+    display: grid;
+    place-items: center;
+
+    background: rgba(0, 0, 0, .4);
+}
+
+.game-over-screen .card {
+    background: #fff;
+
+    padding: 20px;
+
+    border-radius: 12px;
+
+    text-align: center;
+
+    box-shadow: 0 10px 20px rgba(0, 0, 0, .3);
+}
+
+#restartBtn {
+    margin-top: 10px;
+
+    font-size: 16px;
+
+    padding: 8px 16px;
+
+    border: none;
+
+    background: #111827;
+
+    color: #fff;
+
+    border-radius: 8px;
+
+    cursor: pointer;
+}
+
+#restartBtn:hover {
+    background: #1f2937;
+}
+
+
+.hidden {
+    display: none !important;
+}
+
+
+@media (max-width: 980px) {
+
+    #game {
+        width: 92vw;
+        height: 46vw;
+        max-height: 420px;
+    }
+}

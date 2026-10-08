@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Horse Runner - Test Build</title>
+    <link rel="icon" type="image/png" href="horse-icon.png">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div id="game">
+
+        <div class="score" id="score">Score: 0</div>
+
+        <div class="horse" id="horse" aria-label="horse"></div>
+
+        <div class="ground"></div>
+
+        <!-- Start Screen -->
+        <div class="start-screen" id="startScreen">
+
+            <div class="card">
+
+                <h1>🐎 Horse Runner (Test)</h1>
+
+                <p>Goal: Endless Runner Base setup</p>
+
+                <p>
+                    <b>Controls:</b>
+                    Space/Click to Jump
+                </p>
+
+                <button id="startBtn">Start</button>
+
+            </div>
+
+        </div>
+
+
+        <!-- Game Over Screen -->
+        <div class="game-over-screen hidden" id="gameOverScreen">
+
+            <div class="card">
+
+                <h1>Game Over</h1>
+
+                <p id="finalScore">Your Score: 0</p>
+
+                <button id="restartBtn">Restart</button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
